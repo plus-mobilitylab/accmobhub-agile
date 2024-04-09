@@ -1,0 +1,10 @@
+data/*
+!data/.gitkeep
+
+plots/*
+!plots/.gitkeep
+
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
