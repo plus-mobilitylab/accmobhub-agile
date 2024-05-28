@@ -4,7 +4,45 @@ This repository contains the R code to reproduce the analysis of the paper "Asse
 
 ## Instructions
 
-**Step-wise instructions and requirements for reproduction to be added**
+Reproduce the analysis with the following steps.
+
+#### 1. Clone this repository
+
+Clone this repository with [git](https://git-scm.com/) and move into the cloned directory.
+
+```bash
+git clone https://github.com/plus-mobilitylab/accmobhub-agile.git
+cd accmobhub-agile
+```
+
+#### 2. Get the source data
+
+Download the required data from the supplementary materials of the paper, for example using [wget](https://www.gnu.org/software/wget/). The materials can be found on [Zenodo](https://zenodo.org/doi/10.5281/zenodo.10949523). The required files are:
+
+- **salzburgerland-netascore-20240123.gpkg**: The street network of the Salzburg province including bicycle suitability indices as computed by the [NetAScore software](https://github.com/plus-mobilitylab/netascore). Note that if you also want to reproduce the index computations, follow the instructions on the Zenodo repository.
+- **austria-addresses-20211001.csv**: The address location file of the Austrian address database.
+
+Store these files in the data folder of the repository.
+
+```bash
+wget -P data https://zenodo.org/records/10949524/files/salzburgerland-netascore-20240123.gpkg?download=1
+wget -P data https://zenodo.org/records/10949524/files/austria-addresses-20211001.csv?download=1
+```
+
+#### 3. Run the analysis
+
+To run the analysis, simply execute the R script [scripts/run.R](https://github.com/plus-mobilitylab/accmobhub-agile/blob/main/scripts/run.R), from example from within the RStudio IDE or directly from the command line. It assumes your working directory is the top level of the cloned repository. Note that you need to have the following R packages installed to make it work:
+
+- sf
+- sfnetworks
+- tidyverse
+- tidygraph
+- tidyterra
+- maptiles
+- here
+- units
+
+The script will store the results in a file `data/data.RData`. The figures will be stored in the `plots/` directory. 
 
 ## Acknowledgements
 
