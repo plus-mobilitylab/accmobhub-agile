@@ -29,7 +29,7 @@ streets =  netascore_file |>
 # PRE-PROCESS HOUSEHOLDS
 # ---------------------------
 
-address_file = here("data/salzburg-addresses-20211001.csv")
+address_file = here("data/austria-addresses-20211001.csv")
 
 households = address_file |>
   read_delim(delim = ";", col_types = "cccccccccccccccddicc") |>
